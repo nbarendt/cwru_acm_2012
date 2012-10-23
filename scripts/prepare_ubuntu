@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# must be run as root!
+
+
+apt-get install -y apache2 libapache2-mod-wsgi
+apt-get install -y python-dev python-virtualenv
+apt-get install -y git
+apt-get install -y postgresql-9.1 libpq-dev
+apt-get install -y vim
+
+
+
