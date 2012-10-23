@@ -1,0 +1,139 @@
+[
+  {
+    "pk": 2, 
+    "model": "roster.instructor", 
+    "fields": {
+      "first_name": "Michael", 
+      "last_name": "Branicky"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "roster.instructor", 
+    "fields": {
+      "first_name": "Iwan", 
+      "last_name": "Alexander"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "roster.instructor", 
+    "fields": {
+      "first_name": "Robert", 
+      "last_name": "Kirsch"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "roster.instructor", 
+    "fields": {
+      "first_name": "David", 
+      "last_name": "Zeng"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "roster.department", 
+    "fields": {
+      "shortname": "EECS", 
+      "name": "Electrical Engineering and Computer Science"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "roster.department", 
+    "fields": {
+      "shortname": "EMAE", 
+      "name": "Mechanical and Aerospace Engingeering"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "roster.department", 
+    "fields": {
+      "shortname": "EBME", 
+      "name": "Biomedical Engineering"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "roster.department", 
+    "fields": {
+      "shortname": "ECIV", 
+      "name": "Civil Engineering"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "roster.student", 
+    "fields": {
+      "first_name": "Johnny", 
+      "last_name": "B'Goode"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "roster.course", 
+    "fields": {
+      "department": 1, 
+      "students": [
+        2
+      ], 
+      "instructor": 2, 
+      "number": "100", 
+      "description": "Some EE Stuff"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "roster.course", 
+    "fields": {
+      "department": 1, 
+      "students": [
+        2
+      ], 
+      "instructor": 2, 
+      "number": "200", 
+      "description": "Just some more EE stuff"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "roster.course", 
+    "fields": {
+      "department": 2, 
+      "students": [
+        2
+      ], 
+      "instructor": 3, 
+      "number": "100", 
+      "description": "Statics"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "roster.course", 
+    "fields": {
+      "department": 3, 
+      "students": [
+        2
+      ], 
+      "instructor": 4, 
+      "number": "200", 
+      "description": "Biomaterials"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "roster.course", 
+    "fields": {
+      "department": 4, 
+      "students": [
+        2
+      ], 
+      "instructor": 5, 
+      "number": "300", 
+      "description": "Structures"
+    }
+  }
+]
