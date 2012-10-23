@@ -1,5 +1,7 @@
 # Django settings for cwru_acm project.
 
+import os
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -56,7 +58,12 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+# 
+# put our static files at the top-level of our directory structure
+def get_static_dir():
+    cwd = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(cwd, '..', 'static')
+STATIC_ROOT = get_static_dir()
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
