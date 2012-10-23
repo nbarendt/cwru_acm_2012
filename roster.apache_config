@@ -1,0 +1,24 @@
+WSGIScriptAlias / /home/nbarendt/cwru_acm/cwru_acm/cwru_acm/wsgi.py
+#WSGIPythonPath /home/nbarendt/cwru_acm/env/lib/python2.7/site-packages
+WSGIProcessGroup roster.com
+WSGIDaemonProcess roster.com python-path=/home/nbarendt/cwru_acm/cwru_acm:/home/nbarendt/cwru_acm/env/lib/python2.7/site-packages
+<Directory /home/nbarendt/cwru_acm/cwru_acm/cwru_acm>
+<Files wsgi.py>
+Order deny,allow
+Allow from all
+</Files>
+</Directory>
+
+Alias /media/ /home/nbarendt/cwru_acm/cwru_acm/media/
+Alias /static/ /home/nbarendt/cwru_acm/cwru_acm/static/
+
+<Directory /home/nbarendt/cwru_acm/cwru_acm/static>
+Order deny,allow
+Allow from all
+</Directory>
+
+<Directory /home/nbarendt/cwru_acm/cwru_acm/media>
+Order deny,allow
+Allow from all
+</Directory>
+
