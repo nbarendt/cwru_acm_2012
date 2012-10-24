@@ -1,0 +1,5 @@
+{
+	"run_list": [
+		"recipe[roster::app_server]"
+	]
+}
