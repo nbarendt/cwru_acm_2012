@@ -1,0 +1,23 @@
+WSGIScriptAlias / <%= @params[:docroot] %>>/cwru_acm/cwru_acm/wsgi.py
+WSGIProcessGroup roster.com
+WSGIDaemonProcess roster.com python-path=<%= @params[:docroot] %>>/cwru_acm:/home/nbarendt/cwru_acm/env/lib/python2.7/site-packages
+<Directory <%= @params[:docroot] %>>/cwru_acm/cwru_acm>
+<Files wsgi.py>
+Order deny,allow
+Allow from all
+</Files>
+</Directory>
+
+Alias /media/ <%= @params[:docroot] %>>/cwru_acm/media/
+Alias /static/ <%= @params[:docroot] %>>/cwru_acm/static/
+
+<Directory <%= @params[:docroot] %>>/cwru_acm/static>
+Order deny,allow
+Allow from all
+</Directory>
+
+<Directory <%= @params[:docroot] %>>/cwru_acm/media>
+Order deny,allow
+Allow from all
+</Directory>
+
