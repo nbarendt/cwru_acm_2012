@@ -6,10 +6,11 @@
 include_recipe "postgresql::client"
 include_recipe "postgresql::server"
 
-package "ruby-pg" do
+r = package "ruby-pg" do
   package_name "libpgsql-ruby"
-  action :upgrade
+  action :nothing
 end
+r.run_action(:upgrade)
 
 # Snippet from opscode to reload gems
 require 'rubygems'
