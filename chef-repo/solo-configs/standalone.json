@@ -10,7 +10,7 @@
 		}
 	},
 	"run_list": [
-		"recipe[roster::app_server]",
 		"recipe[roster::database]"
+		"recipe[roster::app_server]",
 	]
 }
