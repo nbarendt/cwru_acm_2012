@@ -49,3 +49,7 @@ end
 
 execute "#{python_exec} #{django_admin_cmd} collectstatic --noinput" do
 end
+
+execute "#{python_exec} #{django_admin_cmd} loaddata roster some_initial_data" do
+    only_if {node[:roster][:app_server][:load_default_data]}
+end

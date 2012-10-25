@@ -1,4 +1,9 @@
 {
+	"roster": {
+		"app_server": {
+			"load_default_data": true
+		}
+	},
 	"postgresql": {
 		"password":{
 			"postgres": "roster_123"
