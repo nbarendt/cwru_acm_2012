@@ -41,3 +41,11 @@ web_app "roster" do
     template "roster_apache.conf.erb"
 end
 
+django_admin_cmd = File.join(node[:roster]["DEPLOY_DIR"], "cwru_acm", "manage.py") 
+python_exec = File.join(node[:roster]["VIRTUALENV_DIR"], "bin", "python")
+
+execute "#{python_exec} #{django_admin_cmd} syncdb --noinput" do
+end
+
+execute "#{python_exec} #{django_admin_cmd} collectstatic --noinput" do
+end
