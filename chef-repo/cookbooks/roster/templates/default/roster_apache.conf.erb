@@ -1,22 +1,22 @@
-WSGIScriptAlias / <%= @params[:docroot] %>>/cwru_acm/cwru_acm/wsgi.py
+WSGIScriptAlias / <%= node[:roster][:DEPLOY_DIR] %>/cwru_acm/cwru_acm/wsgi.py
 WSGIProcessGroup roster.com
-WSGIDaemonProcess roster.com python-path=<%= @params[:docroot] %>>/cwru_acm:/home/nbarendt/cwru_acm/env/lib/python2.7/site-packages
-<Directory <%= @params[:docroot] %>>/cwru_acm/cwru_acm>
+WSGIDaemonProcess roster.com python-path=<%= node[:roster][:DEPLOY_DIR] %>/cwru_acm:<%= node[:roster][:DEPLOY_DIR] %>/env/lib/python2.7/site-packages
+<Directory <%= node[:roster][:DEPLOY_DIR] %>/cwru_acm/cwru_acm>
 <Files wsgi.py>
 Order deny,allow
 Allow from all
 </Files>
 </Directory>
 
-Alias /media/ <%= @params[:docroot] %>>/cwru_acm/media/
-Alias /static/ <%= @params[:docroot] %>>/cwru_acm/static/
+Alias /media/ <%= node[:roster][:DEPLOY_DIR] %>/cwru_acm/media/
+Alias /static/ <%= node[:roster][:DEPLOY_DIR] %>/cwru_acm/static/
 
-<Directory <%= @params[:docroot] %>>/cwru_acm/static>
+<Directory <%= node[:roster][:DEPLOY_DIR] %>/cwru_acm/static>
 Order deny,allow
 Allow from all
 </Directory>
 
-<Directory <%= @params[:docroot] %>>/cwru_acm/media>
+<Directory <%= node[:roster][:DEPLOY_DIR] %>/cwru_acm/media>
 Order deny,allow
 Allow from all
 </Directory>
