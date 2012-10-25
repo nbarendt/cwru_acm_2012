@@ -19,6 +19,11 @@ require "pg"
 include_recipe "database"
 postgresql_connection_info = {:host => "127.0.0.1", :port => 5432, :username => 'postgres', :password => node['postgresql']['password']['postgres']}
 
+postgresql_database "roster" do
+    connection postgresql_connection_info
+    action :create
+end
+
 database_user 'roster' do
     connection postgresql_connection_info
     password 'spartans'
@@ -34,9 +39,5 @@ database_user 'roster' do
     action :grant
 end
 
-postgresql_database "roster" do
-    connection postgresql_connection_info
-    action :create
-end
 
 
