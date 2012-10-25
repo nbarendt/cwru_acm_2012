@@ -1,4 +1,9 @@
 {
+	"postgresql": {
+		"password":{
+			"postgres": "roster_123"
+		}
+	},
 	"run_list": [
 		"recipe[roster::app_server]",
 		"recipe[roster::database]"
